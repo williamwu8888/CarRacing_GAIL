@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: carracing-social-robotics
 channels:
   - pytorch
@@ -7,7 +8,6 @@ dependencies:
   - python=3.8
   - pytorch>=1.9.0
   - torchvision>=0.10.0
-  - cudatoolkit=11.3  # comment this line if no GPU
   - gymnasium>=0.28.0
   - swig
   - box2d-py
@@ -20,4 +20,5 @@ dependencies:
   - tqdm>=4.62.0
   - pip
   - pip:
-    - stable-baselines3>=1.7.0
+    - stable-baselines3>=1.6.0
+    - wandb>=0.12.0

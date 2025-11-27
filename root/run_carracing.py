@@ -20,10 +20,10 @@ def main():
     print(f"Running in {args.mode} mode")
     
     if args.mode == 'train_ppo':
-        from scripts.train_ppo import main as train_ppo
+        from src.scripts.train_ppo import main as train_ppo
         train_ppo()
     elif args.mode == 'train_gail':
-        from scripts.train_gail import main as train_gail
+        from src.scripts.train_gail import main as train_gail
         train_gail()
     else:
         print("Evaluation mode selected")
