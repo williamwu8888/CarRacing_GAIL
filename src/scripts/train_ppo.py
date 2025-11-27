@@ -128,7 +128,7 @@ def train_ppo(total_timesteps=100000, rollout_steps=2048, update_epochs=8, minib
               f"FPS: {fps:5.1f}")
 
         # Early success detection
-        if avg_reward > 80 and timestep > 10000:
+        if avg_reward > 90 and timestep > 10000:    # Initially at 50 for quicker tests
             print("🎉 Early success! Model is learning to drive!")
             agent.save(save_path.replace('.pth', '_success.pth'))
             break

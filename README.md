@@ -14,6 +14,7 @@ This project implements and compares:
 CarRacing-Social-Robotics/
 ├── README.md
 ├── INSTALL.md
+├── MainCLI.md
 ├── requirements.txt
 ├── environment.yml
 ├── run_carracing.py
@@ -27,18 +28,12 @@ CarRacing-Social-Robotics/
 │   │   ├── ppo/
 │   │   │   ├── __init__.py
 │   │   │   ├── ppo_agent.py
-│   │   │   ├── ppo_model.py
-│   │   │   └── ppo_trainer.py
 │   │   └── gail/
 │   │       ├── __init__.py
 │   │       ├── gail_agent.py
-│   │       ├── gail_model.py
-│   │       └── gail_trainer.py
 │   ├── utils/
 │   │   ├── __init__.py
 │   │   ├── config.py
-│   │   ├── logger.py
-│   │   └── helpers.py
 │   └── data/
 │       ├── __init__.py
 │       ├── expert_data/
@@ -47,19 +42,21 @@ CarRacing-Social-Robotics/
 │   ├── ppo_config.yaml
 │   └── gail_config.yaml
 ├── scripts/
-│   ├── train_ppo.py
-│   ├── train_gail.py
 │   ├── collect_expert_data.py
-│   └── evaluate_model.py
+│   ├── evaluate_model.py
+│   ├── monitor_ppo_training.py
+│   ├── quick_collect_ppo_demos.py
+│   ├── train_gail.py
+│   └── train_ppo.py
 └── tests/
     ├── __init__.py
     ├── test_environment.py
+    ├── test_fixes.py
     └── test_models.py
 ```
 
-
 ## Quick Start
-1. Clone the repository: `git clone [your-repo-url]`
+1. Clone the repository: `git clone https://github.com/williamwu8888/CarRacing_GAIL`
 2. Install dependencies: `conda env create -f environment.yml`
 3. Activate environment: `conda activate carracing-social-robotics`
 4. Run PPO training: `python scripts/train_ppo.py`

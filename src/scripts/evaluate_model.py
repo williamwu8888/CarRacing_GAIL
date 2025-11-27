@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import gymnasium as gym
 import numpy as np
 import time
-from src.models.ppo.ppo_agent import PPOAgent, ACTIONS
+from models.ppo.ppo_agent import PPOAgent, ACTIONS
 
 
 def evaluate_model_comprehensive(model_path, n_episodes=10, render=False):
