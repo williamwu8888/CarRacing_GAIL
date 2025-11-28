@@ -180,7 +180,7 @@ class ExpertDataCollector:
         
         env.close()
     
-    def save_dataset(self, filename="expert_data.pkl"):
+    def save_dataset(self, filename="ppo_demos.pkl"):
         """Save collected demonstrations"""
         os.makedirs('data/expert_data', exist_ok=True)
         filepath = f"data/expert_data/{filename}"
@@ -193,7 +193,7 @@ class ExpertDataCollector:
         print(f"Observations shape: {self.dataset['observations'][0].shape if self.dataset['observations'] else 'None'}")
         print(f"Actions sample: {self.dataset['actions'][:5] if self.dataset['actions'] else 'None'}")
     
-    def load_dataset(self, filename="expert_data.pkl"):
+    def load_dataset(self, filename="ppo_demos.pkl"):
         """Load demonstrations"""
         filepath = f"data/expert_data/{filename}"
         
@@ -216,7 +216,7 @@ def main():
     parser.add_argument('--human', action='store_true', help='Collect human demonstrations')
     parser.add_argument('--ppo', type=str, help='Collect from trained PPO model (provide model path)')
     parser.add_argument('--episodes', type=int, default=10, help='Number of episodes to collect')
-    parser.add_argument('--output', type=str, default='expert_data.pkl', help='Output filename')
+    parser.add_argument('--output', type=str, default='ppo_demos.pkl', help='Output filename')
     
     args = parser.parse_args()
     

@@ -5,15 +5,19 @@ GAIL training script
 
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# Adjust sys.path to include src directory
+current_dir = os.path.dirname(__file__)
+parent_dir = os.path.dirname(current_dir)
+sys.path.append(parent_dir)
 
 import time
 import numpy as np
 import torch
 import gymnasium as gym
 from collections import deque
-from src.models.gail.gail_agent import GAILAgent
-from src.models.ppo.ppo_agent import ACTIONS
+from models.gail.gail_agent import GAILAgent
+from models.ppo.ppo_agent import ACTIONS
 
 
 def load_expert_data(data_path: str):
@@ -113,7 +117,7 @@ def train_gail(
                 obs, info = env.reset()
         
         print(f"Collected {steps_collected} policy steps")
-        print(f"Recent episode rewards: {list(episode_rewards)[-3:]}")
+        print(f"Recent episode rewards: {[f'{r:.2f}' for r in list(episode_rewards)[-3:]]}")
         
         # Convert to numpy arrays
         policy_obs = np.array(policy_obs, dtype=np.float32)

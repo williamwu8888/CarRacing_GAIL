@@ -12,7 +12,7 @@ python src/scripts/quick_status.py
 ```bash
 python src/scripts/train_ppo.py --timesteps 200000
 ```
-#### Visualize a trained PPO model
+#### Visualization a trained PPO model
 ```bash
 python src/scripts/train_ppo.py --eval models/ppo/ppo_model.pth
 ```
@@ -29,11 +29,26 @@ python src/scripts/evaluate_model.py --model models/ppo/ppo_model.pth --episodes
 python src/scripts/evaluate_model.py --model models/ppo/ppo_model.pth --episodes 3 --render
 ```
 
+## Behavioral Cloning
+```bash
+python src/scripts/behavioral_cloning_ppo.py
+python src/scripts/behavioral_cloning_human.py
+```
+#### Visualization a trained PPO model
+```bash
+python src/scripts/train_ppo.py --eval models/ppo/human_bc_tuned.pth
+python src/scripts/train_ppo.py --eval models/ppo/ppo_bc_tuned.pth
+```
+
 ## GAIL TRAINING
 
 #### Train GAIL on expert data
 ```bash
 python src/scripts/train_gail.py --expert-data data/expert_data/human_demos.pkl --epochs 100
+```
+#### Train GAIL_fixed on expert data
+```bash
+python src/scripts/train_gail_fixed.py --expert-data data/expert_data/human_demos.pkl --epochs 100
 ```
 #### Evaluate GAIL model
 ```bash
@@ -48,7 +63,7 @@ python src/scripts/train_gail.py --expert-data data/expert_data/human_demos.pkl 
 
 #### Human Demonstrations:
 ```bash
-python src/scripts/collect_expert_data.py --human --episodes 5 --output human_demos.pkl
+python src/scripts/collect_human_demos.py --episodes 5
 ```
 #### Collect from Trained PPO Model:
 ```bash
