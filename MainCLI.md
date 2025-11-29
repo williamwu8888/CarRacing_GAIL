@@ -12,7 +12,22 @@ python src/scripts/quick_status.py
 ```bash
 python src/scripts/train_ppo.py --timesteps 200000
 ```
-#### Visualization a trained PPO model
+```
+#### While watching it drive
+```bash
+python src/scripts/evaluate_model.py --model models/ppo/ppo_model.pth --episodes 3 --render
+```
+
+## Behavioral Cloning
+```bash
+python src/scripts/behavioral_cloning_ppo.py
+```
+```bash
+python src/scripts/behavioral_cloning_human.py
+```
+
+## Visualization and evaluation of a trained model
+#### Simple render with rewards shown
 ```bash
 python src/scripts/train_ppo.py --eval models/ppo/ppo_model.pth
 ```
@@ -23,22 +38,6 @@ python src/scripts/evaluate_model.py --model models/ppo/ppo_model.pth --quick --
 #### Comprehensive test of the trained model
 ```bash
 python src/scripts/evaluate_model.py --model models/ppo/ppo_model.pth --episodes 10
-```
-#### While watching it drive
-```bash
-python src/scripts/evaluate_model.py --model models/ppo/ppo_model.pth --episodes 3 --render
-```
-
-## Behavioral Cloning
-```bash
-python src/scripts/behavioral_cloning_ppo.py
-python src/scripts/behavioral_cloning_human.py
-```
-#### Visualization a trained PPO model
-```bash
-python src/scripts/train_ppo.py --eval models/ppo/human_bc_tuned.pth
-python src/scripts/train_ppo.py --eval models/ppo/ppo_bc_tuned.pth
-```
 
 ## GAIL TRAINING
 
