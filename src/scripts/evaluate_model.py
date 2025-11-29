@@ -65,7 +65,7 @@ def evaluate_model_comprehensive(model_path, n_episodes=10, render=False):
     print(f"Best Reward: {np.max(all_rewards):.2f}")
     print(f"Worst Reward: {np.min(all_rewards):.2f}")
     print(f"Average Steps: {np.mean(all_steps):.1f}")
-    print(f"Success Rate (>0 reward): {sum(r > 0 for r in all_rewards) / n_episodes * 100:.1f}%")
+    print(f"Success Rate (>600 reward): {sum(r > 600 for r in all_rewards) / n_episodes * 100:.1f}%")
     
     print(f"\n🎯 Action Distribution:")
     total_actions = sum(action_distribution.values())
@@ -76,11 +76,11 @@ def evaluate_model_comprehensive(model_path, n_episodes=10, render=False):
     
     # Performance assessment
     mean_reward = np.mean(all_rewards)
-    if mean_reward > 100:
+    if mean_reward > 600:
         assessment = "🎉 EXCELLENT - Professional driving!"
-    elif mean_reward > 50:
+    elif mean_reward > 400:
         assessment = "✅ VERY GOOD - Solid driving skills"
-    elif mean_reward > 20:
+    elif mean_reward > 200:
         assessment = "⚠️  DECENT - Can complete laps"
     elif mean_reward > 0:
         assessment = "🔧 BASIC - Learning but needs improvement"

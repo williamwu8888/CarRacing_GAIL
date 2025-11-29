@@ -1,6 +1,11 @@
 # Car Racing Social Robotics Project
 
-Advanced Interactive Reinforcement Learning for CarRacing-v2 environment using PPO and GAIL algorithms.
+Advanced Interactive Reinforcement Learning for CarRacing-v2 environment using PPO and BC algorithms.
+
+## Students involved
+
+- Jacques GUÉRIN (21112101): jacques.guerin@etu.sorbonne-universite.fr
+- William WU (21107936): william.wu@etu.sorbonne-universite.fr
 
 ## Project Overview
 This project implements and compares:
@@ -12,9 +17,12 @@ This project implements and compares:
 
 ```bash
 CarRacing-Social-Robotics/
+├── _CarRacing_report_GUERIN_WU.pdf
 ├── README.md
 ├── INSTALL.md
 ├── MainCLI.md
+├── analysis.md
+├── results.md
 ├── requirements.txt
 ├── environment.yml
 ├── run_carracing.py
@@ -42,17 +50,25 @@ CarRacing-Social-Robotics/
 │   ├── ppo_config.yaml
 │   └── gail_config.yaml
 ├── scripts/
+│   ├── behavioral_cloning_human.py
+│   ├── behavioral_cloning_ppo.py
 │   ├── collect_expert_data.py
+│   ├── collect_human_demos.py
 │   ├── evaluate_model.py
 │   ├── monitor_ppo_training.py
-│   ├── quick_collect_ppo_demos.py
+│   ├── quick_status.py
 │   ├── train_gail.py
+│   ├── train_gail_fixed.py
+│   ├── train_gail_with_bc.py
 │   └── train_ppo.py
-└── tests/
-    ├── __init__.py
-    ├── test_environment.py
-    ├── test_fixes.py
-    └── test_models.py
+├── tests/
+│   ├── __init__.py
+│   ├── test_environment.py
+│   ├── test_fixes.py
+│   └── test_models.py
+└── analysis/
+    ├── learning_curves.py
+    └── training_analysis.py
 ```
 
 ## Quick Start
