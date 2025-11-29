@@ -10,8 +10,10 @@ Advanced Interactive Reinforcement Learning for CarRacing-v2 environment using P
 ## Project Overview
 This project implements and compares:
 - Proximal Policy Optimization (PPO) for baseline performance
-- Generative Adversarial Imitation Learning (GAIL) for learning from demonstrations
-- Interactive training framework for social robotics applications
+- Generative Adversarial Imitation Learning (GAIL) for learning from demonstrations (doesn't work)
+- Interactive training framework for social robotics applications:
+  - Behavioral cloning from human demonstrations
+  - Behavioral cloning from ppo based model
 
 ## Repository Structure
 
@@ -75,17 +77,17 @@ CarRacing-Social-Robotics/
 1. Clone the repository: `git clone https://github.com/williamwu8888/CarRacing_GAIL`
 2. Install dependencies: `conda env create -f environment.yml`
 3. Activate environment: `conda activate carracing-social-robotics`
-4. Run PPO training: `python scripts/train_ppo.py`
+4. Take a look to the `MainCLI.md` file to check out the features.
 
 ## Features
-- Modular implementation of PPO and GAIL algorithms
+- Modular implementation of PPO and BC algorithms
 - Configurable training parameters
 - Expert data collection and management
 - Comprehensive evaluation metrics
 - Interactive training interface
 
 ## Requirements
-- Python 3.8+
-- PyTorch
-- Gymnasium
+- Python 3.11 is best
+- PyTorch, Pygame
+- Gymnasium[box2d]
 - Stable-Baselines3 (for reference implementations)
