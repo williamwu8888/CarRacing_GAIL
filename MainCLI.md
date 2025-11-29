@@ -22,13 +22,13 @@ python src/scripts/evaluate_model.py --model models/ppo/ppo_model.pth --episodes
 
 #### Human Demonstrations:
 ```bash
-python src/scripts/collect_human_demos.py --episodes 10
-# This plays 10 episodes, where human does the demo
+python src/scripts/collect_human_demos.py --episodes 30
+# This plays 30 episodes, where human does the demo and save them into data/expert_data/human_demos.pkl
 ```
 #### Collect from Trained PPO Model:
 ```bash
 python src/scripts/collect_expert_data.py --ppo models/ppo/ppo_model.pth --episodes 30 --output ppo_expert_demos.pkl
-# This simulates 30 episodes of the ppo model
+# This simulates 30 episodes of the ppo model and save them into data/expert_data/ppo_demos.pkl
 ```
 
 ## Behavioral Cloning
